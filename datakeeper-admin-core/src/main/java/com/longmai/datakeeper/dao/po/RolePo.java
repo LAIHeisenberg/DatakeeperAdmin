@@ -1,5 +1,6 @@
 package com.longmai.datakeeper.dao.po;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -7,6 +8,7 @@ import lombok.Data;
 @TableName("dk_role")
 public class RolePo {
 
+    @TableId
     private Long roleId;
 
     private String name;

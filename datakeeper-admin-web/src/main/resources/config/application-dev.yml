@@ -4,7 +4,7 @@ spring:
     db-type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: org.sqlite.JDBC
 #    url: jdbc:sqlite:classpath:datakeeper-db.sqlite
-    url: jdbc:sqlite:/home/laiyz/projects/DataKeeperAdmin/datakeeper-admin-web/src/main/resources/datakeeper-db.sqlite
+    url: jdbc:sqlite:datakeeper-admin-web/src/main/resources/datakeeper-db.sqlite
     username:
     password:
 
