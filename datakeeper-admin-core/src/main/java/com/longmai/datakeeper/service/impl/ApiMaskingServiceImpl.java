@@ -6,8 +6,8 @@ import com.longmai.datakeeper.dao.entity.ApiFieldMaskingEntity;
 import com.longmai.datakeeper.dao.entity.ApiMaskingEntity;
 import com.longmai.datakeeper.dao.mapper.ApiFieldMaskingMapper;
 import com.longmai.datakeeper.dao.mapper.ApiMaskingMapper;
-import com.longmai.datakeeper.dto.ApiFieldMaskingDto;
-import com.longmai.datakeeper.dto.ApiMaskingDetailDto;
+import com.longmai.datakeeper.rest.dto.ApiFieldMaskingDto;
+import com.longmai.datakeeper.rest.dto.ApiMaskingDetailDto;
 import com.longmai.datakeeper.service.ApiMaskingService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,7 +51,7 @@ public class ApiMaskingServiceImpl implements ApiMaskingService {
 
         ApiMaskingDetailDto apiMaskingDetailDto = null;
         QueryWrapper<ApiMaskingEntity> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("api_url", apiUrl);
+        queryWrapper.eq("path", apiUrl);
         ApiMaskingEntity apiMaskingEntity = apiMaskingMapper.selectOne(queryWrapper);
         if (Objects.nonNull(apiMaskingEntity)){
             apiMaskingDetailDto = new ApiMaskingDetailDto();

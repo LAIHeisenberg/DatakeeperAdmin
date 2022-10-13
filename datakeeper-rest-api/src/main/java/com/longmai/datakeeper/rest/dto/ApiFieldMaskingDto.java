@@ -1,4 +1,4 @@
-package com.longmai.datakeeper.dto;
+package com.longmai.datakeeper.rest.dto;
 
 import lombok.Data;
 

@@ -1,5 +1,5 @@
 server:
-  port: 8070
+  port: 8060
 #  port: 443
 #  ssl:
 #    key-store: classpath:server.keystore
@@ -21,13 +21,12 @@ spring:
   redis:
     #数据库索引
     database: 13
-    host: ${REDIS_HOST:192.168.1.128}
+    host: ${REDIS_HOST:127.0.0.1}
     port: ${REDIS_PORT:6379}
     password: ${REDIS_PWD:}
     #连接超时时间
     timeout: 5000
-  thymeleaf:
-    prefix: classpath:datakeeper-web-root/templates/
+
 task:
   pool:
     # 核心线程池大小

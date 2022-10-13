@@ -1,6 +1,6 @@
 package com.longmai.datakeeper.service;
 
-import com.longmai.datakeeper.dto.ApiMaskingDetailDto;
+import com.longmai.datakeeper.rest.dto.ApiMaskingDetailDto;
 
 import java.util.List;
 

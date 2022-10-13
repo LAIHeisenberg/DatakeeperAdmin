@@ -1,0 +1,33 @@
+#配置数据源
+spring:
+  datasource:
+    db-type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: org.sqlite.JDBC
+#    url: jdbc:sqlite:classpath:datakeeper-db.sqlite
+    url: jdbc:sqlite:datakeeper-admin-web/src/main/resources/datakeeper-db.sqlite
+    username:
+    password:
+
+
+#是否开启 swagger-ui
+swagger:
+  enabled: true
+
+# IP 本地解析
+ip:
+  local-parsing: true
+
+# 文件存储路径
+file:
+  mac:
+    path: ~/cipherkeeper/file/
+    avatar: ~/cipherkeeper/avatar/
+  linux:
+    path: /home/cipherkeeper/file/
+    avatar: /home/cipherkeeper/avatar/
+  windows:
+    path: C:\cipherkeeper\file\
+    avatar: C:\cipherkeeper\avatar\
+  # 文件大小 /M
+  maxSize: 10
+  avatarMaxSize: 5

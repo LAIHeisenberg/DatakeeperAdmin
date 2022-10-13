@@ -1,13 +1,17 @@
-package com.longmai.datakeeper.rest.api;
+package com.longmai.datakeeper.rest.provider;
 
-import com.longmai.datakeeper.dto.ApiMaskingDetailDto;
+import com.longmai.datakeeper.rest.dto.ApiMaskingDetailDto;
 import com.longmai.datakeeper.service.ApiMaskingService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.List;
+import java.util.Random;
 
 @RestController
 @RequestMapping("/rest/api")
@@ -31,5 +35,4 @@ public class ApiMaskingController {
         }
         return null;
     }
-
 }
