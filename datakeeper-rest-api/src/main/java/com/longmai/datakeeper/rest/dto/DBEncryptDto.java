@@ -1,7 +1,7 @@
 package com.longmai.datakeeper.rest.dto;
 
 import lombok.Data;
-import org.springframework.util.StringUtils;
+
 
 import java.util.*;
 
@@ -28,7 +28,7 @@ public class DBEncryptDto {
     }
 
     public void addEncryptColumn(String tableName, EncryptColumnDto encryptColumnDto){
-        if (StringUtils.isEmpty(tableName) || Objects.isNull(encryptColumnDto)){
+        if (Objects.isNull(tableName) || Objects.isNull(encryptColumnDto)){
             throw new IllegalArgumentException("tableName 和 encryptColumnDto 不能为NULL");
         }
         List<EncryptColumnDto> encryptColumnlist = encryptTableColumnMap.get(tableName);
