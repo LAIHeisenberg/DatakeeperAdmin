@@ -14,11 +14,11 @@ import java.util.Collections;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class MybatisGenerator {
 
-    private final String jdbcUrl = "jdbc:log4jdbc:mysql://localhost:3306/eladmin?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true";
-    private final String username = "laiyz";
-    private final String password = "laiyz123!";
+    private final String jdbcUrl = "jdbc:sqlite:/home/laiyz/projects/DataKeeperAdmin/datakeeper-admin-web/src/main/resources/datakeeper-db.sqlite";
+    private final String username = "";
+    private final String password = "";
     private final String outputJavaDir = "/home/laiyz/桌面/java";
-    private final String parentPackageName = "com.longmai.datademo.dao";
+    private final String parentPackageName = "com.longmai.datakeeper.dao";
     private final String outputMapperXmlDir = "/home/laiyz/桌面/xml";
 
     @Test
@@ -35,8 +35,8 @@ public class MybatisGenerator {
                             .pathInfo(Collections.singletonMap(OutputFile.xml, outputMapperXmlDir)); // 设置mapperXml生成路径
                 })
                 .strategyConfig(builder -> {
-                    builder.addInclude("ddm_user").addInclude("ddm_menu").addInclude("ddm_role") // 设置需要生成的表名
-                            .addTablePrefix("ddm_"); // 设置过滤表前缀
+                    builder.addInclude("dk_encrypt_field") // 设置需要生成的表名
+                            .addTablePrefix("dk_"); // 设置过滤表前缀
                 })
                 .templateEngine(new FreemarkerTemplateEngine()) // 使用Freemarker引擎模板，默认的是Velocity引擎模板
                 .execute();
