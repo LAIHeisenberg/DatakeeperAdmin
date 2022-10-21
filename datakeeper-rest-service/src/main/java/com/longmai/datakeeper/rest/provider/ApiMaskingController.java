@@ -15,19 +15,17 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/rest/api")
-public class ApiMaskingController implements ApiMaskingHandler {
+public class ApiMaskingController{
 
     @Autowired
     private ApiMaskingService apiMaskingService;
 
     @GetMapping("/masking")
-    @Override
     public List<ApiMaskingDetailDto> listAll(){
         return apiMaskingService.listApiMaskingDetailPageable(1,10);
     }
 
     @GetMapping("/getMasking")
-    @Override
     public ApiMaskingDetailDto getApiMaskingDetail(@RequestParam("apiUrl")String apiUrl){
         try {
             apiUrl = URLDecoder.decode(apiUrl, "utf-8");

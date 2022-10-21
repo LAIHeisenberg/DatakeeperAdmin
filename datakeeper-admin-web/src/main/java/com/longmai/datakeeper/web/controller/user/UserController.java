@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/users")
@@ -20,13 +19,9 @@ public class UserController {
     @Autowired
     private UserFacade userFacade;
 
-    @Autowired
-    private ApiMaskingHandler apiMaskingHandler;
-
     @PreAuthorize("@el.check('user:list')")
     @GetMapping
     public ResponseEntity<Object> listAllUser(){
-        List<ApiMaskingDetailDto> apiMaskingDetailDtos = apiMaskingHandler.listAll();
         return new ResponseEntity<>(userFacade.listAllUser(), HttpStatus.OK);
     }
 

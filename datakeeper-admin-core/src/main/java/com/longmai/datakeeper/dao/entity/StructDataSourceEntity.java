@@ -3,8 +3,6 @@ package com.longmai.datakeeper.dao.entity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
-import java.io.Serializable;
-import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -18,8 +16,6 @@ import java.time.LocalDateTime;
 @Data
 public class StructDataSourceEntity extends BaseEntity  {
 
-    private static final long serialVersionUID = 1L;
-
     private Integer id;
 
     private String ipHost;
@@ -31,7 +27,6 @@ public class StructDataSourceEntity extends BaseEntity  {
     private String dbName;
 
     private String remark;
-
 
     @Override
     public String toString() {

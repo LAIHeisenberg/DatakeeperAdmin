@@ -35,7 +35,7 @@ public class MybatisGenerator {
                             .pathInfo(Collections.singletonMap(OutputFile.xml, outputMapperXmlDir)); // 设置mapperXml生成路径
                 })
                 .strategyConfig(builder -> {
-                    builder.addInclude("dk_encrypt_field") // 设置需要生成的表名
+                    builder.addInclude("dk_masking_column","dk_db_user_masking_column","dk_db_masking_user","dk_masking_algorithm") // 设置需要生成的表名
                             .addTablePrefix("dk_"); // 设置过滤表前缀
                 })
                 .templateEngine(new FreemarkerTemplateEngine()) // 使用Freemarker引擎模板，默认的是Velocity引擎模板
