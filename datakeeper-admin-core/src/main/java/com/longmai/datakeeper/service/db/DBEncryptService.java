@@ -10,10 +10,12 @@ import com.longmai.datakeeper.rest.param.DBEncryptRequest;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -49,6 +51,5 @@ public class DBEncryptService {
         }
         return null;
     }
-
 
 }

@@ -86,17 +86,16 @@ public class MenuServiceImpl implements MenuService {
                         // 一级目录需要加斜杠，不然会报警告
                         menuVo.setPath(menuDTO.getPid() == null ? "/" + menuDTO.getPath() :menuDTO.getPath());
                         menuVo.setHidden(menuDTO.getHidden());
-                        // 如果不是外链
-                        if(!menuDTO.getIFrame()){
-                            if(menuDTO.getPid() == null){
-                                menuVo.setComponent(StringUtils.isEmpty(menuDTO.getComponent())?"Layout":menuDTO.getComponent());
-                                // 如果不是一级菜单，并且菜单类型为目录，则代表是多级菜单
-                            }else if(menuDTO.getType() == 0){
-                                menuVo.setComponent(StringUtils.isEmpty(menuDTO.getComponent())?"ParentView":menuDTO.getComponent());
-                            }else if(StringUtils.isNoneBlank(menuDTO.getComponent())){
-                                menuVo.setComponent(menuDTO.getComponent());
-                            }
+
+                        if(menuDTO.getPid() == null){
+                            menuVo.setComponent(StringUtils.isEmpty(menuDTO.getComponent())?"Layout":menuDTO.getComponent());
+                            // 如果不是一级菜单，并且菜单类型为目录，则代表是多级菜单
+                        }else if(menuDTO.getType() == 0){
+                            menuVo.setComponent(StringUtils.isEmpty(menuDTO.getComponent())?"ParentView":menuDTO.getComponent());
+                        }else if(StringUtils.isNoneBlank(menuDTO.getComponent())){
+                            menuVo.setComponent(menuDTO.getComponent());
                         }
+
                         menuVo.setMeta(new MenuMetaVo(menuDTO.getTitle(),menuDTO.getIcon(),!menuDTO.getCache()));
                         if(CollectionUtil.isNotEmpty(menuDtoList)){
                             menuVo.setAlwaysShow(true);

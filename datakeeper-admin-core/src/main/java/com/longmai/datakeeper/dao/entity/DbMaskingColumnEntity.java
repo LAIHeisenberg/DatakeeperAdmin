@@ -1,5 +1,7 @@
 package com.longmai.datakeeper.dao.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -17,7 +19,7 @@ import lombok.Data;
 public class DbMaskingColumnEntity extends BaseEntity{
 
     private static final long serialVersionUID = 1L;
-
+    @TableId(type = IdType.ASSIGN_ID)
     private Integer id;
 
     private String columnName;
@@ -35,5 +37,9 @@ public class DbMaskingColumnEntity extends BaseEntity{
     private String maskingMethod;
 
     private String maskingMethodArgs;
+
+    private String dataType;
+
+    private String comment;
 
 }

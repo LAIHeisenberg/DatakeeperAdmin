@@ -1,7 +1,5 @@
 package com.longmai.datakeeper.web.controller.user;
 
-import com.longmai.datakeeper.rest.api.ApiMaskingHandler;
-import com.longmai.datakeeper.rest.dto.ApiMaskingDetailDto;
 import com.longmai.datakeeper.web.controller.user.facade.UserFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

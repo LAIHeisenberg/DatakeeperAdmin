@@ -1,5 +1,7 @@
 package com.longmai.datakeeper.dao.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -7,6 +9,7 @@ import lombok.Data;
 @Data
 public class ApiFieldMaskingEntity extends BaseEntity {
 
+    @TableId(type = IdType.ASSIGN_ID)
     private Integer id;
     private Integer apiId;
     private String fieldName;

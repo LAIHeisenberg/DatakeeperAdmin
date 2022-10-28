@@ -1,10 +1,10 @@
 package com.longmai.datakeeper.dao.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
-import java.io.Serializable;
-import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -20,6 +20,7 @@ public class EncryptFieldEntity extends BaseEntity  {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId(type = IdType.ASSIGN_ID)
     private Integer id;
 
     private String columnName;
@@ -33,5 +34,9 @@ public class EncryptFieldEntity extends BaseEntity  {
     private String algorithm;
 
     private String secretKey;
+
+    private String dataType;
+
+    private String comment;
 
 }

@@ -28,8 +28,7 @@
         <dependency>
             <groupId>com.longmai</groupId>
             <artifactId>datakeeper-rest-api</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
+            <version>1.0.2-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
