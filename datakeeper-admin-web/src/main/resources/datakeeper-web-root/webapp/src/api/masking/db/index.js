@@ -16,5 +16,13 @@ export function del(ids) {
   })
 }
 
-export default {create,del}
+export function listBy(params) {
+  return request({
+    url: 'api/admin/db/masking/listBy',
+    method: 'get',
+    params
+  })
+}
+
+export default {create,del,listBy}
 

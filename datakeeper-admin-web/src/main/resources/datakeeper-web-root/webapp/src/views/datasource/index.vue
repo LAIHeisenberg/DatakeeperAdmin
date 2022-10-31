@@ -5,6 +5,9 @@
     </div>
     <el-dialog append-to-body :close-on-click-modal="false" :before-close="crud.cancelCU" :visible.sync="crud.status.cu > 0" :title="crud.status.title" width="570px">
       <el-form ref="form" :inline="true" :model="form" size="small" label-width="120px">
+        <el-form-item label="数据源名" prop="port">
+          <el-input v-model="form.name" />
+        </el-form-item>
         <el-form-item label="Host" prop="ipHost">
           <el-row>
             <el-col>
@@ -43,6 +46,7 @@
     <el-table ref="table" v-loading="crud.loading" :data="crud.data" style="width: 100%;" @selection-change="crud.selectionChangeHandler">
       <el-table-column type="selection" width="55" />
       <el-table-column prop="id" label="ID" />
+      <el-table-column prop="name" lable="数据源名" />
       <el-table-column prop="ipHost" label="Host" />
       <el-table-column prop="port" label="端口号" />
       <el-table-column prop="type" label="类型" />
@@ -72,7 +76,7 @@ import crudOperation from '@crud/CRUD.operation'
 import udOperation from '@crud/UD.operation'
 import pagination from '@crud/Pagination'
 import datasource from '../../api/datasource'
-const defaultForm = {host:null,port:null,type:null,dbName:null,userName:null,password:null,remark:null}
+const defaultForm = {name:null,host:null,port:null,type:null,dbName:null,userName:null,password:null,remark:null}
 export default {
   name: 'dataSource',
   components: { pagination, crudOperation, udOperation },

@@ -18,7 +18,6 @@ import lombok.Data;
 @Data
 public class EncryptFieldEntity extends BaseEntity  {
 
-    private static final long serialVersionUID = 1L;
 
     @TableId(type = IdType.ASSIGN_ID)
     private Integer id;

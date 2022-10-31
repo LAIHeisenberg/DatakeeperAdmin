@@ -2,4 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.longmai.datakeeper.dao.mapper.DbUserMaskingColumnMapper">
 
+    <select id="listUserMaskingColumn" resultType="com.longmai.datakeeper.dao.po.UserMaskingColumnPo" >
+        select t1.id,
+               t2.db_username,
+               t3.db_source_id,
+               t3.db_name,
+               t3.table_name,
+               t3.column_name,
+               t3.data_type,
+               t3.masking_level,
+               t3.comment,
+               t3.masking_method,
+               t3.masking_method_args
+        from dk_db_user_masking_column t1
+        inner join dk_db_masking_user t2
+                on t1.db_user_id = t2.id
+        inner join dk_db_masking_column t3
+                on t1.masking_column_id = t3.id
+    </select>
+
 </mapper>

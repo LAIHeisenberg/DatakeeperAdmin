@@ -115,14 +115,18 @@ export default {
       })
     },
     applyMasking(){
-
+      const parentThis = this
       const obj = new Object()
       obj.dataSourceId = this.introspectTableform.dataSourceId
       obj.tableName = this.introspectTableform.tableName
       obj.maskingColumns = this.columnDefList
 
       dbMaskingOps.create(obj).then(function(resp){
-
+        parentThis.$notify({
+            title: '成功',
+            message: '创建成功',
+            type: 'success'
+          })
       })
     }
   }

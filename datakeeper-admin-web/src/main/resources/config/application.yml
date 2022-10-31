@@ -20,7 +20,7 @@ spring:
 
   redis:
     #数据库索引
-    database: 13
+    database: 12
     host: ${REDIS_HOST:192.168.1.128}
     port: ${REDIS_PORT:6379}
     password: ${REDIS_PWD:}
