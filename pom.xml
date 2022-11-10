@@ -18,6 +18,7 @@
         <module>datakeeper-admin-common</module>
         <module>datakeeper-rest-service</module>
         <module>datakeeper-rest-api</module>
+        <module>datakeeper-data-discovery</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
@@ -30,6 +31,7 @@
         <commons-pool2.version>2.11.1</commons-pool2.version>
         <datakeeper-admin-common.version>1.0.0-SNAPSHOT</datakeeper-admin-common.version>
         <datakeeper-admin-core.version>1.0.0-SNAPSHOT</datakeeper-admin-core.version>
+        <datakeeper-data-discovery.version>1.0.0-SNAPSHOT</datakeeper-data-discovery.version>
         <log4jdbc.version>1.16</log4jdbc.version>
     </properties>
 
@@ -89,6 +91,11 @@
                 <groupId>com.longmai</groupId>
                 <artifactId>datakeeper-admin-common</artifactId>
                 <version>${datakeeper-admin-common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.longmai</groupId>
+                <artifactId>datakeeper-data-discovery</artifactId>
+                <version>${datakeeper-data-discovery.version}</version>
             </dependency>
             <!-- jwt -->
             <dependency>

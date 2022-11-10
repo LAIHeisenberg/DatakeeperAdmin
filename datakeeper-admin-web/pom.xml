@@ -43,6 +43,10 @@
             <groupId>com.longmai</groupId>
             <artifactId>datakeeper-admin-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.longmai</groupId>
+            <artifactId>datakeeper-data-discovery</artifactId>
+        </dependency>
         <!-- jwt -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>

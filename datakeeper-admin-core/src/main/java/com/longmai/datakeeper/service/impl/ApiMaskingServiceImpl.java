@@ -6,6 +6,7 @@ import com.longmai.datakeeper.dao.entity.ApiFieldMaskingEntity;
 import com.longmai.datakeeper.dao.entity.ApiMaskingEntity;
 import com.longmai.datakeeper.dao.mapper.ApiFieldMaskingMapper;
 import com.longmai.datakeeper.dao.mapper.ApiMaskingMapper;
+import com.longmai.datakeeper.dto.ApiMaskingDto;
 import com.longmai.datakeeper.rest.dto.ApiFieldMaskingDto;
 import com.longmai.datakeeper.rest.dto.ApiMaskingDetailDto;
 import com.longmai.datakeeper.service.ApiMaskingService;
@@ -14,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
@@ -83,6 +85,44 @@ public class ApiMaskingServiceImpl implements ApiMaskingService {
             }
         }).collect(Collectors.toList());
 
+    }
+
+    @Override
+    public Page<ApiMaskingDto> listPage(ApiMaskingEntity param, Integer pageNum, Integer pageSize){
+
+        QueryWrapper<ApiMaskingEntity> queryWrapper = new QueryWrapper<>();
+        queryWrapper.setEntity(param);
+        Page<ApiMaskingEntity> page = apiMaskingMapper.selectPage(new Page<>(pageNum, pageSize), queryWrapper);
+        List<ApiMaskingDto> records = page.getRecords().stream().map(new Function<ApiMaskingEntity, ApiMaskingDto>() {
+            @Override
+            public ApiMaskingDto apply(ApiMaskingEntity entity) {
+                ApiMaskingDto dto = new ApiMaskingDto();
+                BeanUtils.copyProperties(entity,dto);
+                return dto;
+            }
+        }).collect(Collectors.toList());
+
+        Page<ApiMaskingDto> resultPage = new Page<>(page.getCurrent(), page.getSize(), page.getTotal());
+        resultPage.setRecords(records);
+
+        return resultPage;
+    }
+
+    @Override
+    public boolean create(ApiMaskingEntity entity){
+        if (Objects.isNull(entity)){
+            return false;
+        }
+        entity.setCreateTime(new Date());
+        return apiMaskingMapper.insert(entity) > 1;
+    }
+
+    @Override
+    public boolean deleteById(Integer id){
+        if (Objects.isNull(id)){
+            return false;
+        }
+        return apiMaskingMapper.deleteById(id) > 1;
     }
 
 
