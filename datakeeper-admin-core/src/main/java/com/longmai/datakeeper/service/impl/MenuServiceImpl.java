@@ -96,7 +96,7 @@ public class MenuServiceImpl implements MenuService {
                             menuVo.setComponent(menuDTO.getComponent());
                         }
 
-                        menuVo.setMeta(new MenuMetaVo(menuDTO.getTitle(),menuDTO.getIcon(),!menuDTO.getCache()));
+                        menuVo.setMeta(new MenuMetaVo(menuDTO.getTitle(),menuDTO.getIcon(),true));
                         if(CollectionUtil.isNotEmpty(menuDtoList)){
                             menuVo.setAlwaysShow(true);
                             menuVo.setRedirect("noredirect");
@@ -105,14 +105,8 @@ public class MenuServiceImpl implements MenuService {
                         } else if(menuDTO.getPid() == null){
                             MenuVo menuVo1 = new MenuVo();
                             menuVo1.setMeta(menuVo.getMeta());
-                            // 非外链
-                            if(!menuDTO.getIFrame()){
-                                menuVo1.setPath("index");
-                                menuVo1.setName(menuVo.getName());
-                                menuVo1.setComponent(menuVo.getComponent());
-                            } else {
-                                menuVo1.setPath(menuDTO.getPath());
-                            }
+                            menuVo1.setPath(menuDTO.getPath());
+
                             menuVo.setName(null);
                             menuVo.setMeta(null);
                             menuVo.setComponent("Layout");

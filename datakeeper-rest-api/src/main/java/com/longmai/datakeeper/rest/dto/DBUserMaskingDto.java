@@ -37,10 +37,10 @@ public class DBUserMaskingDto {
         if (Objects.isNull(tableName) || Objects.isNull(maskingColumnDto)){
             throw new IllegalArgumentException("tableName 和 encryptColumnDto 不能为NULL");
         }
-        List<DBUserMaskingDto.MaskingColumnDto> maskingColumnlist = maskingTableColumnMap.get(tableName);
+        List<DBUserMaskingDto.MaskingColumnDto> maskingColumnlist = maskingTableColumnMap.get(tableName.toUpperCase());
         if (maskingColumnlist == null){
             maskingColumnlist = new ArrayList<>();
-            maskingTableColumnMap.put(tableName, maskingColumnlist);
+            maskingTableColumnMap.put(tableName.toUpperCase(), maskingColumnlist);
         }
         maskingColumnlist.add(maskingColumnDto);
     }

@@ -25,14 +25,10 @@ public class MenuPo {
 
     private String icon;
 
-    private Boolean cache;
-
     private Boolean hidden;
 
     private Long pid;
 
     private Integer subCount = 0;
-
-    private Boolean iFrame;
 
 }

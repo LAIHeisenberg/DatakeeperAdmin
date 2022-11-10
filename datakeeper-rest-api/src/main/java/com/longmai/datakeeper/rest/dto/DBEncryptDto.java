@@ -31,10 +31,10 @@ public class DBEncryptDto {
         if (Objects.isNull(tableName) || Objects.isNull(encryptColumnDto)){
             throw new IllegalArgumentException("tableName 和 encryptColumnDto 不能为NULL");
         }
-        List<EncryptColumnDto> encryptColumnlist = encryptTableColumnMap.get(tableName);
+        List<EncryptColumnDto> encryptColumnlist = encryptTableColumnMap.get(tableName.toUpperCase());
         if (encryptColumnlist == null){
             encryptColumnlist = new ArrayList<>();
-            encryptTableColumnMap.put(tableName, encryptColumnlist);
+            encryptTableColumnMap.put(tableName.toUpperCase(), encryptColumnlist);
         }
         encryptColumnlist.add(encryptColumnDto);
     }
