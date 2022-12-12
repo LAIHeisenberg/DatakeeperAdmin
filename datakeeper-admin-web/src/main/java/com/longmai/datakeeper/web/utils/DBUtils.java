@@ -2,28 +2,25 @@ package com.longmai.datakeeper.web.utils;
 
 import com.alibaba.druid.sql.SQLUtils;
 import com.alibaba.druid.sql.ast.SQLDataType;
-import com.alibaba.druid.sql.ast.SQLExpr;
-import com.alibaba.druid.sql.ast.SQLStatement;
 import com.alibaba.druid.sql.ast.expr.SQLCharExpr;
 import com.alibaba.druid.sql.ast.statement.SQLColumnDefinition;
 import com.alibaba.druid.sql.dialect.mysql.ast.statement.MySqlCreateTableStatement;
 import com.mysql.cj.jdbc.Driver;
 import com.mysql.cj.jdbc.result.ResultSetImpl;
 import com.mysql.cj.protocol.ColumnDefinition;
-import com.mysql.cj.protocol.a.result.ByteArrayRow;
-import com.mysql.cj.protocol.a.result.ResultsetRowsStatic;
 import com.mysql.cj.result.Field;
-import javafx.scene.control.Tab;
 import lombok.Data;
+import lombok.extern.java.Log;
 
 import java.sql.*;
 import java.util.*;
 
+@Log
 public class DBUtils {
 
     private static Driver driver;
 
-    private static String jdbcUrl = "jdbc:mysql://%s:%s/%s";
+    private static String jdbcUrl = "jdbc:mysql://%s:%s/%s?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false";
 
     static {
         try {
@@ -48,7 +45,6 @@ public class DBUtils {
     }
 
     public static Connection getConnection(String jdbcUrl, String user, String password){
-
         Connection connection = null;
         Properties properties = new Properties();
         properties.setProperty("user", user);

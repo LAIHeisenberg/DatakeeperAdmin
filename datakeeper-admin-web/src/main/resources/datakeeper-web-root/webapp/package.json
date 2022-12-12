@@ -1,8 +1,8 @@
 {
-  "name": "eladmin-web",
+  "name": "datakeeper-web",
   "version": "2.6.0",
-  "description": "ELADMIN 前端源码",
-  "author": "Zheng Jie",
+  "description": "DatakeeperAdmin 前端源码",
+  "author": "longmai",
   "license": "Apache-2.0",
   "scripts": {
     "dev": "vue-cli-service serve",
