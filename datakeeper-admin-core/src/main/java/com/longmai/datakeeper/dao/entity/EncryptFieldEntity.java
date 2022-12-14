@@ -19,7 +19,7 @@ import lombok.Data;
 public class EncryptFieldEntity extends BaseEntity  {
 
 
-    @TableId(type = IdType.ASSIGN_ID)
+    @TableId(type = IdType.AUTO)
     private Integer id;
 
     private String columnName;

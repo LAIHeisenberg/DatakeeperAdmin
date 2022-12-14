@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 @TableName("dk_api_masking")
 public class ApiMaskingEntity extends BaseEntity {
-    @TableId(type = IdType.ASSIGN_ID)
+    @TableId(type = IdType.AUTO)
     private Integer id;
     private String host;
     private String path;

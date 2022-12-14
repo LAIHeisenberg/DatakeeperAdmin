@@ -19,7 +19,7 @@ import java.io.Serializable;
 @Data
 public class MaskingAlgorithmEntity implements Serializable {
 
-    @TableId(type = IdType.ASSIGN_ID)
+    @TableId(type = IdType.AUTO)
     private Integer id;
 
     private String category;

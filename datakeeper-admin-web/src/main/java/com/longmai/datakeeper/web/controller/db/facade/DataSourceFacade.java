@@ -35,7 +35,7 @@ public class DataSourceFacade {
 
         BeanUtils.copyProperties(dataSourceCreate,dataSourceEntity);
         dataSourceEntity.setCreateById(currentUser.getId().intValue());
-        dataSourceEntity.setUserName(currentUser.getUserName());
+        dataSourceEntity.setCreateByName(currentUser.getUserName());
         return structDataSourceService.create(dataSourceEntity);
     }
 
@@ -43,7 +43,7 @@ public class DataSourceFacade {
         StructDataSourceEntity dataSourceEntity = new StructDataSourceEntity();
         BeanUtils.copyProperties(dataSourceUpdate,dataSourceEntity);
         dataSourceEntity.setCreateById(currentUser.getId().intValue());
-        dataSourceEntity.setUserName(currentUser.getUserName());
+        dataSourceEntity.setCreateByName(currentUser.getUserName());
         return structDataSourceService.update(dataSourceEntity);
     }
 

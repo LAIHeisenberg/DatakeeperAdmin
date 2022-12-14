@@ -17,7 +17,7 @@ import lombok.Data;
 @Data
 public class DbMaskingUserEntity extends BaseEntity {
 
-    @TableId(type = IdType.ASSIGN_ID)
+    @TableId(type = IdType.AUTO)
     private Integer id;
 
     private String realName;
