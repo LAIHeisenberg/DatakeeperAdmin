@@ -25,5 +25,6 @@ public class JdbcRecognizer extends AbstractRecognizer {
         String text = " asdfasdfejdbc:sqlite:datakeeper-admin-web/src/main/resources/datakeeper-db.sqlite";
         JdbcRecognizer jdbcRecognizer = new JdbcRecognizer(null);
         System.out.println(jdbcRecognizer.recognize(text));
+        System.out.println(jdbcRecognizer.getRegex());
     }
 }

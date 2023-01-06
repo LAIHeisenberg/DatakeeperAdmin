@@ -33,7 +33,6 @@ public class RegisteredNoRecognizer extends AbstractRecognizer {
         List<String> target = new ArrayList<>();
         for (String s : list){
             String areaCode = s.substring(0, 6);
-            System.out.println(areaCode);
             if(isAreaCode(areaCode)){
                 target.add(s);
             }

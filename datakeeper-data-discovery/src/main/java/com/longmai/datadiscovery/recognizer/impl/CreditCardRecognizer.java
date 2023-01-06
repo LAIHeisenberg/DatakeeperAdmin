@@ -39,6 +39,7 @@ public class CreditCardRecognizer extends AbstractRecognizer {
         String text = "qweruquoiwer4539218949049803lok559asfadd";
         CreditCardRecognizer creditCardRecognizer = new CreditCardRecognizer(null);
         System.out.println(creditCardRecognizer.recognize(text));
+        System.out.println(creditCardRecognizer.getRegex());
     }
 
 }

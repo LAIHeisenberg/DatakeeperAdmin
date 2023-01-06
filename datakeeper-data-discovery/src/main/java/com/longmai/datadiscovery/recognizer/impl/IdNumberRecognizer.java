@@ -42,6 +42,7 @@ public class IdNumberRecognizer extends AbstractRecognizer {
         String text = "阿的维尔大哦2519640斯\t\b蒂芬俄问题110225640302612阿斯地方而且为110225196426127\n asdfwerpuqwer 110225196426127awsd54523455231sdfg234的其二确认台湾\n";
         IdNumberRecognizer idNumberRecognizer = new IdNumberRecognizer(null);
         System.out.println(idNumberRecognizer.recognize(text));
+        System.out.println(idNumberRecognizer.getRegex());
     }
 
     private String upgrade_18(String idNumber){

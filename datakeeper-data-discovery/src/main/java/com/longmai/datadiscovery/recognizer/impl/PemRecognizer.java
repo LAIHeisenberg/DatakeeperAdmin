@@ -22,6 +22,7 @@ public class PemRecognizer extends AbstractRecognizer {
 
         PemRecognizer pemRecognizer = new PemRecognizer(null);
         System.out.println(pemRecognizer.recognize(pem));
+        System.out.println(pemRecognizer.getRegex());
 
     }
 

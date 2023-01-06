@@ -19,6 +19,7 @@ public class CarNumberRecognizer extends AbstractRecognizer {
         String text = "as京8879d桂L00004fqwer京NA988,京ES68702";
         CarNumberRecognizer carNumberRecognizer = new CarNumberRecognizer(null);
         System.out.println(carNumberRecognizer.recognize(text));
+        System.out.println(carNumberRecognizer.getRegex());
     }
 
 

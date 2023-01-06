@@ -29,5 +29,6 @@ public class DateRecognizer extends AbstractRecognizer {
         String text = "asdfqwer道派阿斯地方asdf2022年11月04日qwe2022-12-05日asdf04/11/20qwer";
         DateRecognizer rec = new DateRecognizer(null);
         System.out.println(rec.recognize(text));
+        System.out.println(rec.getRegex());
     }
 }

@@ -26,5 +26,6 @@ public class PhoneNoRecognizer extends AbstractRecognizer {
         PhoneNoRecognizer phoneNoRecognizer = new PhoneNoRecognizer(null);
         String text = "asdfda阿大夫完全哦噢如dadfasjdf183 14010018985 asdfqwer54654asdfaweragsdfg18310018698asdfwer";
         System.out.println(phoneNoRecognizer.recognize(text));
+        System.out.println(phoneNoRecognizer.getRegex());
     }
 }

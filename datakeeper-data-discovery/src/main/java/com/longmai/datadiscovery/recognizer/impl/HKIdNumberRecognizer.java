@@ -16,4 +16,8 @@ public class HKIdNumberRecognizer extends AbstractRecognizer {
     protected String getRegex() {
         return "[A-Z][0-9]{6}\\([0-9A]\\)";
     }
+
+    public static void main(String[] args){
+        System.out.println(new HKIdNumberRecognizer("").getRegex());
+    }
 }
